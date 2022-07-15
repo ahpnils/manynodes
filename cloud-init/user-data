@@ -1,0 +1,34 @@
+#cloud-config
+
+fqdn: ${hostname}
+
+users:
+  - name: ${username}
+    uid: ${uid}
+    gid: ${uid}
+    primary_group: ${username}
+    groups: users,wheel
+    shell: /bin/bash
+    lock_passwd: false
+    plain_text_passwd: ${username}
+    ssh_authorized_keys: 
+      - ${ssh_authorized_key}
+    sudo: ["ALL=(ALL) NOPASSWD:ALL"]
+write_files:
+ - content: 'vm.swappiness = 5'
+   owner: root:root
+   permissions: '0644'
+   path: /etc/sysctl.d/98-swappiness.conf
+ - content: |
+     tsflags='nodocs'
+     install_weak_deps=False
+   path: /etc/dnf/dnf.conf
+   append: true
+
+packages: ${packages}
+
+runcmd:
+  - sysctl -p /etc/sysctl.d/98-swappiness.conf
+
+final_message: "Your node is now ready :-)"
+
