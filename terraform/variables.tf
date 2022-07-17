@@ -22,6 +22,11 @@ variable "os_image_name" {
   default = "manynodes_baseimage.qcow2"
 }
 
+variable "os_image_size" {
+  description = "OS disk size (in bytes)"
+  default     = "8589934592"
+}
+
 variable "storage_pool" {
   default = "default"
 }

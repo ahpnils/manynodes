@@ -9,6 +9,7 @@ resource "libvirt_volume" "volume" {
   base_volume_id = libvirt_volume.os_image.id
   count          = var.nodes_quantity
   pool           = var.storage_pool
+  size           = var.os_image_size
 }
 
 resource "libvirt_cloudinit_disk" "cinit_disk" {
