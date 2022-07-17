@@ -1,7 +1,7 @@
 resource "libvirt_domain" "domain" {
-  name = "node${count.index}"
+  name   = "node${count.index}"
   memory = var.memory
-  vcpu = var.vcpus
+  vcpu   = var.vcpus
   cpu {
     mode = "host-passthrough"
   }

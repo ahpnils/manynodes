@@ -55,5 +55,5 @@ variable "ssh_authorized_key" {
 }
 
 variable "packages" {
-  default = ["lsof","iftop"]
+  default = ["lsof", "iftop"]
 }
