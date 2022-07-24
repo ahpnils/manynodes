@@ -25,7 +25,11 @@ resource "libvirt_domain" "domain" {
   }
 
   disk {
-    volume_id = element(libvirt_volume.volume.*.id, count.index)
+    volume_id = element(libvirt_volume.system_image.*.id, count.index)
+  }
+
+  disk {
+    volume_id = element(libvirt_volume.data_image.*.id, count.index)
   }
 
   network_interface {

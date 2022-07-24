@@ -4,12 +4,19 @@ resource "libvirt_volume" "os_image" {
   pool   = var.storage_pool
 }
 
-resource "libvirt_volume" "volume" {
+resource "libvirt_volume" "system_image" {
   name           = "node${count.index}.qcow2"
   base_volume_id = libvirt_volume.os_image.id
   count          = var.nodes_quantity
   pool           = var.storage_pool
   size           = var.os_image_size
+}
+
+resource "libvirt_volume" "data_image" {
+  name   = "node${count.index}_data.qcow2"
+  count  = var.nodes_quantity
+  pool   = var.storage_pool
+  size   = var.data_image_size
 }
 
 resource "libvirt_cloudinit_disk" "cinit_disk" {

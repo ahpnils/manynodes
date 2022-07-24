@@ -27,6 +27,11 @@ variable "os_image_size" {
   default     = "8589934592"
 }
 
+variable "data_image_size" {
+  description = "Data disk size (in bytes)"
+  default     = "8388608"
+}
+
 variable "storage_pool" {
   default = "default"
 }
