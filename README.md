@@ -20,6 +20,7 @@ Manynodes allows you to customize the following aspects :
  * the subnet address ;
  * the (Linux) base image to create the guests from ;
  * the disk size ;
+ * the second disk size ;
  * a user name and a group, with password and an (optional) authorized public
    ssh key.
 
