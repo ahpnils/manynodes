@@ -9,9 +9,4 @@ resource "libvirt_network" "manynodes_net" {
   dns {
     enabled = true
   }
-  #hosts {
-  #  hostname = "node${count.index}"
-  #  ip = "my.ip.address.2"
-  #}
-  #count = var.nodes_quantity
 }
