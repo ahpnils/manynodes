@@ -27,8 +27,7 @@ write_files:
 
 packages: ${packages}
 
-runcmd:
-  - sysctl -p /etc/sysctl.d/98-swappiness.conf
+runcmd: ${runcmd}
 
 final_message: "Your node is now ready :-)"
 

@@ -46,6 +46,7 @@ data "template_file" "node_userdata" {
     password           = var.password
     ssh_authorized_key = var.ssh_authorized_key
     packages           = jsonencode(var.packages)
+    runcmd             = jsonencode(var.runcmd)
   }
 }
 

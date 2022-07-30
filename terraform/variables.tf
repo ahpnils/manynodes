@@ -67,3 +67,8 @@ variable "ssh_authorized_key" {
 variable "packages" {
   default = ["lsof", "iftop"]
 }
+
+variable "runcmd" {
+  default = ["sysctl -p /etc/sysctl.d/98-swappiness.conf",
+            "echo 'yolo' > /root/yolo.txt"]
+}

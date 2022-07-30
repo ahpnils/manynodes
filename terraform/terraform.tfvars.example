@@ -14,4 +14,5 @@ storage_pool = "default"
 user = "alice"
 uid = "2337"
 password = "unsecurepassword"
+runcmd = ["sysctl -p /etc/sysctl.d/98-swappiness.conf"]
 ssh_authorized_key = "ssh-rsa AAAA"
