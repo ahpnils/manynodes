@@ -2,6 +2,8 @@
 
 fqdn: ${hostname}
 
+manage_etc_hosts: true
+
 users:
   - name: ${username}
     uid: ${uid}
