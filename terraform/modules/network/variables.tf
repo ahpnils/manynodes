@@ -11,7 +11,7 @@ variable "name" {
 }
 
 variable "domain" {
-  description = "Which domain we'll used"
+  description = "Which domain we'll use"
   type        = string
   default     = "default"
 
