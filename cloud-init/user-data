@@ -12,7 +12,7 @@ users:
     groups: users,wheel
     shell: /bin/bash
     lock_passwd: false
-    plain_text_passwd: ${username}
+    plain_text_passwd: ${password}
     ssh_authorized_keys: 
       - ${ssh_authorized_key}
     sudo: ["ALL=(ALL) NOPASSWD:ALL"]
